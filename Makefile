@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 16:38:14 by hogkim            #+#    #+#              #
-#    Updated: 2022/06/13 15:46:44 by hogkim           ###   ########.fr        #
+#    Updated: 2022/06/14 12:37:13 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,7 @@ SRCS		= commands.c \
 			  sort_and_print.c \
 			  sort_utils.c \
 			  sort_3to5.c \
-			  sort_5to100.c \
-			  sort_5to100_find.c \
-			  sort_5to100_utils.c \
+			  sort_over5.c \
 			  stack.c \
 			  utils.c 
 OBJS		= $(SRCS:.c=.o)

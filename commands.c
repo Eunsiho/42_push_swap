@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 15:27:13 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/07 09:55:40 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/14 15:26:44 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,36 @@
 
 void	ft_c_r_rotate(t_stack *stack)
 {
-	int	*temp;
+	int	temp;
+	int	i;
 
 	if (stack->size < 2)
 		return ;
-	temp = (int *)malloc(sizeof(int) * stack->capacity);
-	if (!temp)
-		ft_error_exit();
-	ft_memcpy(temp, stack->arr + 1, (stack->size - 1) * sizeof(int));
-	temp[stack->size - 1] = stack->arr[0];
-	free(stack->arr);
-	stack->arr = temp;
+	temp = stack->arr[0];
+	i = 0;
+	while (i < stack->size - 1)
+	{
+		stack->arr[i] = stack->arr[i + 1];
+		i++;
+	}
+	stack->arr[stack->size - 1] = temp;
 }
 
 void	ft_c_rotate(t_stack *stack)
 {
-	int	*temp;
+	int	temp;
+	int	i;
 
 	if (stack->size < 2)
 		return ;
-	temp = (int *)malloc(sizeof(int) * stack->capacity);
-	if (!temp)
-		ft_error_exit();
-	ft_memcpy(temp + 1, stack->arr, (stack->size - 1) * sizeof(int));
-	temp[0] = stack->arr[stack->size - 1];
-	free(stack->arr);
-	stack->arr = temp;
+	temp = stack->arr[stack->size - 1];
+	i = stack->size - 1;
+	while (i > 0)
+	{
+		stack->arr[i] = stack->arr[i - 1];
+		i--;
+	}
+	stack->arr[0] = temp;
 }
 
 void	ft_c_push(t_stack *from, t_stack *to)

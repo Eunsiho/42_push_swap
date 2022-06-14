@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:19:47 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/14 10:28:32 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/14 13:29:24 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_error_exit(void);
 void	ft_free_stack(t_stack *stack);
 
 // stack
-void	ft_init_stack(t_stack **stack);
+void	ft_init_stack(t_stack **stack, int size);
 void	ft_push(t_stack *stack, int data);
 int		ft_pop(t_stack *stack);
 

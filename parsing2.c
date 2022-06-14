@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:39:12 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/14 10:01:45 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/14 13:25:03 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_make_stack_a(t_stack *a, int argc, char *argv[])
 {
 	t_stack	*index;
 
-	ft_init_stack(&index);
+	ft_init_stack(&index, a->capacity);
 	ft_take_args_raw(index, argc, argv);
 	ft_bubble_sort(index->arr, index->size);
 	ft_take_args_raw(a, argc, argv);

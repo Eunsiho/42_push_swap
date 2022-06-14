@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:39:12 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/10 16:24:22 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/14 10:01:45 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_convert2indexed(t_stack *a, t_stack *index)
 			if (a->arr[i] == index->arr[j])
 			{
 				a->arr[i] = j;
-				break;
+				break ;
 			}
 			j++;
 		}
@@ -75,7 +75,7 @@ void	ft_reverse_array_int(int *arr, int size)
 
 void	ft_make_stack_a(t_stack *a, int argc, char *argv[])
 {
-	t_stack *index;
+	t_stack	*index;
 
 	ft_init_stack(&index);
 	ft_take_args_raw(index, argc, argv);

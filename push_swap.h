@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:19:47 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/13 15:43:29 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/14 10:28:32 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ void	rrr(t_stack *a, t_stack *b);
 // sort
 void	ft_sort_to3(t_stack *a);
 void	ft_sort_4to5(t_stack *a, t_stack *b);
-void	ft_sort_5to100(t_stack *a, t_stack *b);
-//int		ft_sort_over101(t_stack *a, t_stack *b);
+void	ft_sort_over5(t_stack *a, t_stack *b);
 
 void	ft_sort_and_print(t_stack *a, t_stack *b);
 
@@ -69,17 +68,5 @@ void	ft_sort_and_print(t_stack *a, t_stack *b);
 int		ft_isreversesorted(t_stack *a);
 int		ft_issorted(t_stack *a);
 int		ft_search_index(t_stack *stack, int n);
-
-// sort_5to100_utils
-int		ft_get_from_a(t_stack *a, t_stack *b, int *aim);
-int		ft_get_aim_from_ends(t_stack *a, t_stack *b, int *aim);
-void	ft_get_aim_top(t_stack *a, t_stack *b, int *aim);
-void	ft_get_aim_bottom(t_stack *a, t_stack *b, int *aim);
-
-// sort_5to100_find
-int		ft_find_aim(t_stack *stack, int aim);
-int		ft_find_aim_from_bottom(t_stack *stack, int aim, int min);
-int		ft_find_aim_from_top(t_stack *stack, int aim, int min);
-
 
 #endif

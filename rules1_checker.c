@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rules1_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 15:56:25 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/15 16:15:48 by hogkim           ###   ########.fr       */
+/*   Created: 2022/06/07 10:07:30 by hogkim            #+#    #+#             */
+/*   Updated: 2022/06/15 14:19:15 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	sa_c(t_stack *a)
 {
-	t_stack	*a;
-	t_stack	*b;
+	if (a->size < 2)
+		return ;
+	ft_c_swap(a);
+}
 
-	ft_init_stack(&a, 500);
-	ft_make_stack_a(a, argc, argv);
-	ft_init_stack(&b, a->capacity);
-	ft_sort_and_print(a, b);
-	ft_free_stack(a);
-	ft_free_stack(b);
-	return (0);
+void	sb_c(t_stack *b)
+{
+	if (b->size < 2)
+		return ;
+	ft_c_swap(b);
+}
+
+void	ss_c(t_stack *a, t_stack *b)
+{
+	if (a->size < 2 && b->size < 2)
+		return ;
+	ft_c_swap(a);
+	ft_c_swap(b);
 }

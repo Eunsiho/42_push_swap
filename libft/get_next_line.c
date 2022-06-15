@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:57:46 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/15 14:02:19 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 14:16:31 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ char	*ft_read_till_line(int fd, char *temp)
 
 char	*get_next_line(int fd)
 {
-	static char	*temp[OPEN_MAX];
+	static char	*temp[512];
 	char		*line;
 
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > 511 || BUFFER_SIZE <= 0)
 		return (NULL);
 	temp[fd] = ft_read_till_line(fd, temp[fd]);
 	if (!temp[fd])

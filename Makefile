@@ -6,11 +6,12 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 16:38:14 by hogkim            #+#    #+#              #
-#    Updated: 2022/06/14 12:37:13 by hogkim           ###   ########.fr        #
+#    Updated: 2022/06/15 16:36:11 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
+BONUS		= checker
 LIBFT		= libft.a
 
 SRCS		= commands.c \

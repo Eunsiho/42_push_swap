@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:19:47 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/15 13:54:57 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 16:50:40 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,18 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
+void	sa_c(t_stack *a);
+void	sb_c(t_stack *b);
+void	ss_c(t_stack *a, t_stack *b);
+void	pa_c(t_stack *a, t_stack *b);
+void	pb_c(t_stack *a, t_stack *b);
+void	ra_c(t_stack *a);
+void	rb_c(t_stack *b);
+void	rr_c(t_stack *a, t_stack *b);
+void	rra_c(t_stack *a);
+void	rrb_c(t_stack *b);
+void	rrr_c(t_stack *a, t_stack *b);
+
 // sort
 void	ft_sort_to3(t_stack *a);
 void	ft_sort_4to5(t_stack *a, t_stack *b);
@@ -63,7 +75,7 @@ void	ft_sort_over5(t_stack *a, t_stack *b);
 void	ft_sort_and_print(t_stack *a, t_stack *b);
 
 // sort utils
-int		ft_isreversesorted(t_stack *a);
+int		ft_ra_is_better(t_stack *a, t_stack *b, int chunk);
 int		ft_issorted(t_stack *a);
 int		ft_search_index(t_stack *stack, int n);
 

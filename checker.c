@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 15:56:25 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/15 13:54:46 by hogkim           ###   ########.fr       */
+/*   Created: 2022/06/15 13:52:35 by hogkim            #+#    #+#             */
+/*   Updated: 2022/06/15 13:55:20 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 int	main(int argc, char *argv[])
 {
-	t_stack	*a;
-	t_stack	*b;
-
+	t_stack *a;
+	t_stack *b;
+	
 	ft_init_stack(&a, 500);
 	ft_make_stack_a(a, argc, argv);
 	ft_init_stack(&b, a->capacity);
-	ft_sort_and_print(a, b);
-	ft_free_stack(a);
-	ft_free_stack(b);
-	return (0);
 }

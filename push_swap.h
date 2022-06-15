@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:19:47 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/14 13:29:24 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 13:54:57 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	ft_take_args_raw(t_stack *indexed, int argc, char *argv[]);
 void	ft_indexing(t_stack *stack, int argc, char *argv[]);
 
 // utils
-void	ft_exit_main(t_stack *a, t_stack *b);
 void	ft_error_exit(void);
 void	ft_free_stack(t_stack *stack);
 
@@ -61,7 +60,6 @@ void	rrr(t_stack *a, t_stack *b);
 void	ft_sort_to3(t_stack *a);
 void	ft_sort_4to5(t_stack *a, t_stack *b);
 void	ft_sort_over5(t_stack *a, t_stack *b);
-
 void	ft_sort_and_print(t_stack *a, t_stack *b);
 
 // sort utils

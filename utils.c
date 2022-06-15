@@ -6,17 +6,11 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 03:13:42 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/10 16:21:16 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 13:54:45 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_exit_main(t_stack *a, t_stack *b)
-{
-	ft_free_stack(a);
-	ft_free_stack(b);
-}
 
 void	ft_free_stack(t_stack *stack)
 {

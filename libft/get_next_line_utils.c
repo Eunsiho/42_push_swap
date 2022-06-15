@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 23:26:06 by hogkim            #+#    #+#             */
-/*   Updated: 2022/03/13 19:36:03 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 14:02:20 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*str;
 

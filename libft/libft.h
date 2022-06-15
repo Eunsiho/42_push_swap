@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 19:55:50 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/09 16:52:51 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 14:01:06 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../push_swap.h"
+# include "get_next_line.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

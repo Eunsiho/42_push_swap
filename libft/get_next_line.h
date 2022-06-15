@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:25:11 by hogkim            #+#    #+#             */
-/*   Updated: 2022/03/04 18:39:32 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 14:05:00 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 # include <unistd.h>
 # include <limits.h>
 
+# define BUFFER_SIZE 10
+
 char	*ft_strdup(const char *s1);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_no_newline(char *buffer);
 size_t	ft_strlen(const char *s);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 
 char	*ft_restart(char *temp);
 char	*ft_cut_temp(char *temp);

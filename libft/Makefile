@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 23:44:09 by hogkim            #+#    #+#              #
-#    Updated: 2022/06/07 09:46:42 by hogkim           ###   ########.fr        #
+#    Updated: 2022/06/15 14:04:03 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,9 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	   ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c \
 	   ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 	   ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	   ft_putnbr_fd.c ft_iswhitespace.c
+	   ft_putnbr_fd.c ft_iswhitespace.c get_next_line.c get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
-
-B_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		 ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-
-B_OBJS = $(B_SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -35,22 +30,13 @@ ARFLAGS = rc
 
 RM = rm -f
 
-ifdef IS_BONUS
-	F_OBJS = $(OBJS) $(B_OBJS)
-else
-	F_OBJS = $(OBJS)
-endif
-
 all : $(NAME)
 
-$(NAME) : $(F_OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(F_OBJS)
-
-bonus :
-	IS_BONUS=1 make all
+$(NAME) : $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 clean :
-	$(RM) $(OBJS) $(B_OBJS)
+	$(RM) $(OBJS)
 
 fclean : clean
 	$(RM) $(NAME)

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 23:02:19 by hogkim            #+#    #+#             */
-/*   Updated: 2022/01/24 17:23:43hogkim           ###   ########.fr       */
+/*   Created: 2022/06/15 13:57:46 by hogkim            #+#    #+#             */
+/*   Updated: 2022/06/15 14:02:19 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_restart(char *temp)
 	i = 0;
 	while (temp[i] && (temp[i] != '\n'))
 		i++;
-	if (!temp[i] || (len - i) == 1)
+	if (!temp[i])
 	{
 		free(temp);
 		return (NULL);
@@ -45,20 +45,10 @@ char	*ft_cut_temp(char *temp)
 	i = 0;
 	while ((temp[i] != '\n') && temp[i])
 		i++;
-	if (temp[i] == '\n')
-	{
-		line = (char *)malloc(sizeof(char) * (i + 2));
-		if (!line)
-			return (NULL);
-		ft_strlcpy(line, temp, i + 2);
-	}
-	else
-	{
-		line = (char *)malloc(sizeof(char) * (i + 1));
-		if (!line)
-			return (NULL);
-		ft_strlcpy(line, temp, i + 1);
-	}
+	line = (char *)malloc(sizeof(char) * (i + 1));
+	if (!line)
+		return (NULL);
+	ft_strlcpy(line, temp, i + 2);
 	return (line);
 }
 
@@ -80,7 +70,7 @@ char	*ft_read_till_line(int fd, char *temp)
 			return (NULL);
 		}
 		buffer[n] = 0;
-		temp = ft_strjoin(temp, buffer);
+		temp = ft_strjoin_gnl(temp, buffer);
 	}
 	free(buffer);
 	return (temp);
@@ -88,15 +78,15 @@ char	*ft_read_till_line(int fd, char *temp)
 
 char	*get_next_line(int fd)
 {
-	static char	*temp;
+	static char	*temp[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
-	temp = ft_read_till_line(fd, temp);
-	if (!temp)
+	temp[fd] = ft_read_till_line(fd, temp[fd]);
+	if (!temp[fd])
 		return (NULL);
-	line = ft_cut_temp(temp);
-	temp = ft_restart(temp);
+	line = ft_cut_temp(temp[fd]);
+	temp[fd] = ft_restart(temp[fd]);
 	return (line);
 }

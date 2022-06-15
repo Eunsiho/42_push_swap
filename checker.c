@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:52:35 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/15 16:13:16 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/15 17:18:47 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 void	ft_put_command(t_stack *a, t_stack *b, char *s)
 {
 	if (!ft_strncmp(s, "sa\n", 4))
-		sa(a);
+		sa_c(a);
 	else if(!ft_strncmp(s, "sb\n", 4))
-		sb(b);
+		sb_c(b);
 	else if(!ft_strncmp(s, "ss\n", 4))
-		ss(a, b);
+		ss_c(a, b);
 	else if(!ft_strncmp(s, "pa\n", 4))
-		pa(a, b);
+		pa_c(a, b);
 	else if(!ft_strncmp(s, "pb\n", 4))
-		pb(a, b);
+		pb_c(a, b);
 	else if(!ft_strncmp(s, "ra\n", 4))
-		ra(a);
+		ra_c(a);
 	else if(!ft_strncmp(s, "rb\n", 4))
-		rb(b);
+		rb_c(b);
 	else if(!ft_strncmp(s, "rr\n", 4))
-		rr(a, b);
+		rr_c(a, b);
 	else if(!ft_strncmp(s, "rra\n", 4))
-		rra(a);
+		rra_c(a);
 	else if(!ft_strncmp(s, "rrb\n", 4))
-		rrb(b);
+		rrb_c(b);
 	else if(!ft_strncmp(s, "rrr\n", 4))
-		rrr(a, b);
+		rrr_c(a, b);
 	else
 		ft_error_exit();
 }

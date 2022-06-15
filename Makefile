@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 16:38:14 by hogkim            #+#    #+#              #
-#    Updated: 2022/06/15 16:36:11 by hogkim           ###   ########.fr        #
+#    Updated: 2022/06/15 17:18:46 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,21 +28,42 @@ SRCS		= commands.c \
 			  stack.c \
 			  utils.c 
 OBJS		= $(SRCS:.c=.o)
+SRCS_B		= checker.c \
+			  checker_rules1.c \
+			  checker_rules2.c \
+			  checker_rules3.c \
+			  commands.c \
+			  parsing.c \
+			  parsing2.c \
+			  stack.c \
+			  sort_utils.c \
+			  utils.c  
+OBJS_B		= $(SRCS_B:.c=.o)
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
+
+ifdef CHECKER
+	OBJ_FILE	= $(OBJS) $(OBJS_B)
+	NAMES		= $(BONUS)
+else
+	OBJ_FILE	= $(OBJS)
+	NAMES		= $(NAME)
+endif
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
 
+bonus : $(BONUS)
+
 clean :
-	rm -rf $(OBJS) $(LIBFT)
+	rm -rf $(OBJS) $(OBJS_B) $(LIBFT) 
 	make -C libft clean
 
 fclean :
-	rm -rf $(OBJS) $(NAME) $(LIBFT)
+	rm -rf $(OBJS) $(NAME) $(LIBFT) $(BONUS)
 	make -C libft fclean
 
 re :
@@ -55,5 +76,8 @@ $(NAME) : $(OBJS) $(LIBFT)
 $(LIBFT) :
 	make -C libft
 	cp libft/libft.a .
+
+$(BONUS) : $(OBJS_B) $(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY : all clean fclean re

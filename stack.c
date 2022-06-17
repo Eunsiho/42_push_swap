@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hogkim <hogkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 15:21:07 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/14 13:20:17 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/17 10:43:42 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_expand_arr(t_stack *stack, int cur_size)
 	ft_memcpy(temp, stack->arr, sizeof(int) * cur_size);
 	free(stack->arr);
 	stack->arr = temp;
+	stack->capacity = cur_size * 2;
 }
 
 int	ft_pop(t_stack *stack)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hogkim <hogkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:56:25 by hogkim            #+#    #+#             */
-/*   Updated: 2022/06/15 16:15:48 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/06/17 10:50:15 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	main(int argc, char *argv[])
 	ft_sort_and_print(a, b);
 	ft_free_stack(a);
 	ft_free_stack(b);
+	while (1);
 	return (0);
 }

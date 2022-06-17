@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
+#    By: hogkim <hogkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 16:38:14 by hogkim            #+#    #+#              #
-#    Updated: 2022/06/15 17:27:19 by hogkim           ###   ########.fr        #
+#    Updated: 2022/06/17 09:47:26 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,14 +43,6 @@ OBJS_B		= $(SRCS_B:.c=.o)
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 
-ifdef CHECKER
-	OBJ_FILE	= $(OBJS) $(OBJS_B)
-	NAMES		= $(BONUS)
-else
-	OBJ_FILE	= $(OBJS)
-	NAMES		= $(NAME)
-endif
-
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -63,7 +55,7 @@ clean :
 	make -C libft clean
 
 fclean :
-	rm -rf $(OBJS) $(NAME) $(LIBFT) $(BONUS)
+	rm -rf $(OBJS) $(NAME) $(OBJS_B) $(LIBFT) $(BONUS)
 	make -C libft fclean
 
 re :
@@ -80,4 +72,4 @@ $(LIBFT) :
 $(BONUS) : $(OBJS_B) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $^
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus
